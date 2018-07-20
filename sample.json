@@ -11,7 +11,6 @@
                 "Handler": "index.handler",
                 "Role": "arn:aws:iam::834462077670:role/CodeStarWorker-aws-codestar-Lambda",
                 "MemorySize": "512",
-                "CodeUri": "../codecommit-repo",
                 "Runtime": "nodejs8.10",
                 "Timeout": "300",
                 "Environment": {
