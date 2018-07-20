@@ -3,5 +3,9 @@ phases:
   install:
     commands:
       - npm install
+      - aws cloudformation package --template-file sample.yaml --s3-bucket pdomala-lambda-pipeline --output-template-file output.yaml
 artifacts:
   type: zip
+  files:
+    - samTemplate.yaml
+    - outputSamTemplate.yaml
