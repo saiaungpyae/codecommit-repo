@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: CD Demo Lambda
+Resources:
+  CDDemoLambda:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: pnodejs8.10
+      Description: 'Lambda function for CD Demo'
+      MemorySize: 128
+      Timeout: 300
+      Role: 'arn:aws:iam::834462077670:role/CodeStarWorker-aws-codestar-Lambda'
+      Events:
+        getAZsAPI:
+          Type: Api
+          Properties:
+            Path: /get
+            Method: get
+      Environment:
+        Variables:
+          REGION: us-east-1
