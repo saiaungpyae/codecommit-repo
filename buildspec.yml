@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - npm install
-      - aws cloudformation package --template-file sample.json --s3-bucket pdomala-lambda-pipeline --output-template-file output.json
+      - aws cloudformation package --template-file sample.json --s3-bucket saiaungpyae --output-template-file output.json
 artifacts:
   type: zip
   files:
