@@ -12,7 +12,7 @@
                 "Role": "arn:aws:iam::834462077670:role/CodeStarWorker-aws-codestar-Lambda",
                 "MemorySize": 512,
                 "Runtime": "nodejs8.10",
-                "Timeout": "300",
+                "Timeout": 3000,
                 "Environment": {
                     "Variables": {
                         "REGION": [
