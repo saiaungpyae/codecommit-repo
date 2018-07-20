@@ -3,9 +3,9 @@ phases:
   install:
     commands:
       - npm install
-      - aws cloudformation package --template-file sample.json --s3-bucket saiaungpyae --output-template-file output.json
+      - aws cloudformation package --template-file sample.yaml --s3-bucket saiaungpyae --output-template-file output.yaml
 artifacts:
   type: zip
   files:
-    - sample.json
-    - output.json
+    - sample.yaml
+    - output.yaml
