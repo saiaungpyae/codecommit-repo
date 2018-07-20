@@ -1,0 +1,28 @@
+{
+    "AWSTemplateFormatVersion": '2010-09-09',
+    "Transform": 'AWS::Serverless-2016-10-31',
+    "Description": "CF Lambda Test",
+    "Resources": {
+        "HelloWorld": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+                "Description": "Description Text",
+                "FunctionName": "HelloWorld",
+                "Handler": "index.handler",
+                "Role": "arn:aws:iam::834462077670:role/CodeStarWorker-aws-codestar-Lambda",
+                "MemorySize": "512",
+                "CodeUri": "./codecommit-repo",
+                "Runtime": "nodejs8.10",
+                "Timeout": "300",
+                "Environment": {
+                    "Variables": {
+                        "REGION": [
+                            "us-east-1",
+                            "us-east-2"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

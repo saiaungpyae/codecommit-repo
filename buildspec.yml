@@ -1,12 +1,8 @@
-version: 0.2
-
+version: 0.1
 phases:
   install:
     commands:
       - npm install
-  build:
-    commands:
-      - echo build
+      - aws cloudformation package --template-file samTemplate.json --s3-bucket saiaungpyae --output-template-file outputSamTemplate.json
 artifacts:
-  files:
-    - '**/*'
+  type: zip
