@@ -8,7 +8,6 @@ phases:
   build:
     commands:
       # Use AWS SAM to package the application by using AWS CloudFormation
-      - aws s3 cp --recursive public/ s3://saiaungpyae/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
       - aws cloudformation package --template input.yml --s3-bucket saiaungpyae --output-template output.yml
 artifacts:
   type: zip

@@ -3,7 +3,7 @@
 exports.handler = function(event, context, callback) {
   var result = {
     statusCode: 200,
-    body: "GGWP"
+    body: "GGEZ"
   };
   callback(null, result);
 };
