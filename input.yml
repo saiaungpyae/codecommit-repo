@@ -6,6 +6,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       FunctionName: HelloWorld
+      CodeUri: ''
       Handler: index.handler
       Runtime: nodejs8.10
       Description: 'Lambda function for CD Demo'
@@ -20,4 +21,4 @@ Resources:
             Method: get
       Environment:
         Variables:
-          REGION: [us-east-1, us-east-2]
+          REGION: us-east-1
