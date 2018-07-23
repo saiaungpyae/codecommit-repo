@@ -1,19 +1,23 @@
-AWSTemplateFormatVersion: 2010-09-09
-Transform:
-- AWS::Serverless-2016-10-31
-
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: CD Demo Lambda
 Resources:
-  GetHelloWorld:
-    Type: AWS::Serverless::Function
+  HelloWorld:
+    Type: 'AWS::Serverless::Function'
     Properties:
+      FunctionName: HelloWorld
       Handler: index.handler
-      Runtime: nodejs4.3
-      Role:
-        Fn::ImportValue:
-          !Join ['-', [!Ref 'AWS::Region', 'LambdaTrustRole']]
+      Runtime: nodejs8.10
+      Description: 'Lambda function for CD Demo'
+      MemorySize: 128
+      Timeout: 300
+      Role: 'arn:aws:iam::834462077670:role/CodeStarWorker-aws-codestar-Lambda'
       Events:
-        GetEvent:
+        getAZsAPI:
           Type: Api
           Properties:
-            Path: /
+            Path: /get
             Method: get
+      Environment:
+        Variables:
+          REGION: us-east-1
