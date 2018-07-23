@@ -3,9 +3,14 @@ phases:
   install:
     commands:
       - npm install
-      - aws cloudformation package --template-file sample.yaml --s3-bucket saiaungpyae --output-template-file output.yaml
+      - pip install --upgrade awscli
+      
+  build:
+    commands:
+      # Use AWS SAM to package the application by using AWS CloudFormation
+      - aws s3 cp --recursive public/ s3://saiaungpyae/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+      - aws cloudformation package --template input.yaml --s3-bucket saiaungpyae --output-template output.yaml
 artifacts:
   type: zip
   files:
-    - sample.yaml
     - output.yaml

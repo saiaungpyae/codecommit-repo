@@ -5,6 +5,5 @@ exports.handler = function(event, context, callback) {
     statusCode: 200,
     body: "GGWP"
   };
-
   callback(null, result);
 };
