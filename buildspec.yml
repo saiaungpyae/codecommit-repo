@@ -10,5 +10,6 @@ phases:
       # Use AWS SAM to package the application by using AWS CloudFormation
       # - aws s3 cp --recursive public/ s3://saiaungpyae/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
       - aws lambda list-functions
+      - zip -r ggwp.zip .
 artifacts:
   type: zip
