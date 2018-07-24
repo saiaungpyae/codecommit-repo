@@ -3,7 +3,7 @@
 exports.handler = function(event, context, callback) {
   var result = {
     statusCode: 200,
-    body: "GGEZ"
+    body: "WOW WOW WOW"
   };
   callback(null, result);
 };
