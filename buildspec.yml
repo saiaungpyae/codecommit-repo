@@ -13,6 +13,7 @@ phases:
       - zip -r ggwp.zip .
       - aws lambda update-function-code --function-name HelloWorld --zip-file fileb://./ggwp.zip
       - aws configure set default.region ap-southeast-1
+      - aws lambda list-functions
       - aws lambda update-function-code --function-name ggwp --zip-file fileb://./ggwp.zip
 artifacts:
   type: zip
