@@ -11,5 +11,8 @@ phases:
       # - aws s3 cp --recursive public/ s3://saiaungpyae/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
       - aws lambda list-functions
       - zip -r ggwp.zip .
+      - aws lambda update-function-code --function-name HelloWorld --zip-file fileb://./ggwp.zip
+      - aws configure set default.region us-east-1
+      - aws lambda update-function-code --function-name ggwp --zip-file fileb://./ggwp.zip
 artifacts:
   type: zip
